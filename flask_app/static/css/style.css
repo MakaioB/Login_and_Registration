@@ -1,0 +1,36 @@
+* {
+    margin: 5px;
+    padding: 5px; 
+    background-color: #181818;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0, auto;
+    max-width: 65%;
+}
+
+body {
+    background-color: #181818 !important;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > button {
+    margin: 20px;
+    background-color: rgb(13, 117, 117);
+}
+form > input {
+    background-color: #404040;
+}
+
+h3, a {
+    display: flex;
+    justify-content: center;
+}

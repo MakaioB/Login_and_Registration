@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Login & Registration</title>
+</head>
+<body>
+    <div class="container" >
+        <h2>Register</h2>
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/register" method="post">
+            <label for = "first_name" >First Name:</label>
+            <input type = "text" id = "first_name" name = "first_name">
+            
+            <label for = "last_name" >Last Name:</label>
+            <input type = "text" id = "last_name" name = "last_name">
+            
+            <label for = "register_email" >Email</label>
+            <input type="email" id = "email" name = "email">
+            
+            <label for = "register_password" >Password:</label>
+            <input type="password" id = "password" name = "password">
+            
+            <label for = "password_conformation" >Confirm Password:</label>
+            <input type = "password" id = "password_confirmation" name = "password_confirmation">
+            
+            <button type="submit" name = "register" id = "register">Register</button>
+        </form>
+
+        <h2>Login</h2>
+
+        <form action="/login" method="post">
+            <label for = "login_email" >Email:</label>
+            <input type="email" id = "email" name = "email">
+            
+            <label for = "login_password" >Password:</label>
+            <input type="password" id = "password" name = "password">
+            
+            <button type="submit" name = "login" id = "login">Login</button>
+        </form>
+    </div>
+</body>
+</html>
